@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ROOT_ROUTES } from '../../enums/routes.enum';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeRoute implements OnInit {
   title = 'angular-starter';
+  routes = ROOT_ROUTES;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
+
+  linkTo(path: string[]) {
+    this.router.navigate(path);
+  }
 }
