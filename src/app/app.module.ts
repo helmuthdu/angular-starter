@@ -9,11 +9,12 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { environment } from '../environments/environment';
+import { AppRoutesModule } from './app-routes.module';
 import { AppComponent } from './app.component';
 import { AppEffects } from './app.effects';
-import { AppRoutesModule } from './app.routes';
 import * as AppModules from './modules';
 import * as AppRoutes from './routes';
+import * as AppServices from './services';
 import { metaReducers, reducers } from './stores/modules/user/reducer';
 
 @NgModule({
@@ -30,7 +31,7 @@ import { metaReducers, reducers } from './stores/modules/user/reducer';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [...Object.values(AppServices)],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
