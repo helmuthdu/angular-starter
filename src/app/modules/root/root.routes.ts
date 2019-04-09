@@ -9,10 +9,12 @@ export const routes: Routes = [
   {
     path: ROOT_ROUTES.HOME,
     component: DefaultLayout,
-    children: [
-      { path: ROOT_ROUTES.ABOUT, component: AboutRoute },
-      { path: ROOT_ROUTES.HOME, component: HomeRoute, pathMatch: 'full' }
-    ]
+    children: [{ path: '', component: HomeRoute }]
+  },
+  {
+    path: ROOT_ROUTES.ABOUT,
+    component: DefaultLayout,
+    children: [{ path: '', component: AboutRoute }]
   }
 ];
 

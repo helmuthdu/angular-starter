@@ -9,20 +9,21 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { environment } from '../environments/environment';
-import * as AppModules from '../modules';
 import { AppComponent } from './app.component';
 import { AppEffects } from './app.effects';
 import { AppRoutesModule } from './app.routes';
-import { metaReducers, reducers } from './reducers';
+import * as AppModules from './modules';
+import * as AppRoutes from './routes';
+import { metaReducers, reducers } from './stores/modules/user/reducer';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ...Object.values(AppRoutes)],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    AppRoutesModule,
     ...Object.values(AppModules),
+    AppRoutesModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot([AppEffects]),
