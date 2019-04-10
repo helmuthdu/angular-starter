@@ -24,21 +24,8 @@ import { metaReducers, reducers } from './stores/modules/user/reducer';
     FormsModule,
     ...Object.values(AppModules.mods),
     AppRoutesModule,
-    StoreModule.forRoot(reducers, { metaReducers }),
-    StoreModule.forRoot({
-      app: reducers,
-      ...Object.values(AppModules.stores)
-        .filter((store: any) => store.reducer)
-        .reduce((acc: any, store: any) => {
-          acc[store.name] = store.reducer;
-          return acc;
-        }, {})
-    }),
-    EffectsModule.forRoot(
-      Object.values(AppModules.stores)
-        .filter((store: any) => store.Effect)
-        .map((store: any) => store.Effect)
-    ),
+    StoreModule.forRoot({ app: reducers, ...AppModules.reducers }, { metaReducers }),
+    EffectsModule.forRoot([...AppModules.effects]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
