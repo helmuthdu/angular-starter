@@ -1,4 +1,4 @@
-export enum ROOT_ROUTES {
-  ABOUT = 'about',
-  HOME = 'home'
+export enum RootRoutes {
+  About = 'about',
+  Home = 'home'
 }
