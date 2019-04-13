@@ -8,7 +8,7 @@ import { NotificationMessage } from '../../models/notification.model';
   providedIn: 'root'
 })
 export class NotificationService {
-  private subject$ = new Subject<NotificationMessage>();
+  private readonly subject$ = new Subject<NotificationMessage>();
   private keepAfterNavigationChange = false;
 
   constructor(private router: Router) {
@@ -59,5 +59,3 @@ export class NotificationService {
     return this.subject$.asObservable();
   }
 }
-
-// this._notify.messages.subscribe(message => { this.message = message; });

@@ -14,11 +14,17 @@ import { AppComponent } from './app.component';
 import { metaReducers } from './app.stores';
 import * as AppComponents from './components';
 import * as AppModules from './modules';
+import * as AppPipes from './pipes';
 import * as AppRoutes from './routes';
 import * as AppServices from './services';
 
 @NgModule({
-  declarations: [AppComponent, ...Object.values(AppComponents), ...Object.values(AppRoutes)],
+  declarations: [
+    AppComponent,
+    ...Object.values(AppComponents),
+    ...Object.values(AppPipes),
+    ...Object.values(AppRoutes)
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
