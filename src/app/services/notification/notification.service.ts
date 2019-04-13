@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
-import { NotificationType } from '../../enums/notification.enum';
+import { NotificationTypes } from '../../enums/notification.enum';
 import { NotificationMessage } from '../../models/notification.model';
 
 @Injectable({
@@ -26,29 +26,33 @@ export class NotificationService {
     });
   }
 
-  info(title: string, text: string, keepAfterNavigationChange = false) {
+  info(title: string, message: string, keepAfterNavigationChange = false) {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
-    this.subject$.next({ type: NotificationType.info, title, text });
+    this.subject$.next({ type: NotificationTypes.Info, title, message });
   }
 
-  success(title: string, text: string, keepAfterNavigationChange = false) {
+  success(title: string, message: string, keepAfterNavigationChange = false) {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
-    this.subject$.next({ type: NotificationType.success, title, text });
+    this.subject$.next({ type: NotificationTypes.Success, title, message });
   }
 
-  waiting(title: string, text: string, keepAfterNavigationChange = false) {
+  waiting(title: string, message: string, keepAfterNavigationChange = false) {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
-    this.subject$.next({ type: NotificationType.waiting, title, text });
+    this.subject$.next({ type: NotificationTypes.Waiting, title, message });
   }
 
-  error(title: string, text: string, keepAfterNavigationChange = false) {
+  error(title: string, message: string, keepAfterNavigationChange = false) {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
-    this.subject$.next({ type: NotificationType.error, title, text });
+    this.subject$.next({ type: NotificationTypes.Error, title, message });
   }
 
-  warning(title: string, text: string, keepAfterNavigationChange = false) {
+  warning(title: string, message: string, keepAfterNavigationChange = false) {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
-    this.subject$.next({ type: NotificationType.warning, title, text });
+    this.subject$.next({ type: NotificationTypes.Warning, title, message });
+  }
+
+  clear() {
+    this.subject$.next();
   }
 
   get messages(): Observable<NotificationMessage> {

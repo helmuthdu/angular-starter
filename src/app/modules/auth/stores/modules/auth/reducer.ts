@@ -10,7 +10,7 @@ export type Action = Readonly<{
 // Reducer
 export const reducer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case ActionTypes.AUTH_SET_USER:
+    case ActionTypes.SetUser:
       return { ...state, ...action.payload };
     default:
       return state;
