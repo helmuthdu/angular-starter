@@ -6,7 +6,7 @@ import * as rootStores from './root/stores';
 
 export type State = authStores.State & rootStores.State;
 
-export const mods = {
+export const modules = {
   AuthModule,
   RootModule
 };

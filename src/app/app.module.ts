@@ -23,7 +23,7 @@ import * as AppServices from './services';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    ...Object.values(AppModules.mods),
+    ...Object.values(AppModules.modules),
     AppRoutesModule,
     StoreModule.forRoot({ ...AppModules.reducers }, { metaReducers }),
     EffectsModule.forRoot([...AppModules.effects]),
