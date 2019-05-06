@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { AuthRoutesModule } from './auth-routes.module';
+import { UserRoutesModule } from './user-routes.module';
 import { DefaultLayout } from './layouts/default/default.layout';
 import { SignInRoute } from './routes/sign-in/sign-in.route';
 
@@ -8,7 +8,7 @@ import { SignInRoute } from './routes/sign-in/sign-in.route';
   declarations: [DefaultLayout, SignInRoute],
   imports: [
     CommonModule,
-    AuthRoutesModule
+    UserRoutesModule
   ]
 })
-export class AuthModule {}
+export class UserModule {}

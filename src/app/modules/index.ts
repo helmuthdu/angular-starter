@@ -1,14 +1,14 @@
-import { AuthModule } from './auth/auth.module';
-import * as authStores from './auth/stores';
-
 import { RootModule } from './root/root.module';
 import * as rootStores from './root/stores';
+
+import { UserModule } from './user/user.module';
+import * as authStores from './user/stores';
 
 export type State = authStores.State & rootStores.State;
 
 export const modules = {
-  AuthModule,
-  RootModule
+  RootModule,
+  UserModule
 };
 
 export const reducers = Object.values([...authStores.stores, ...rootStores.stores])

@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { AuthRequest } from '../../../enums/request.enum';
+import { UserRequest } from '../../../enums/request.enum';
 import { ActionTypes } from './types';
 
 export class ActionGetUser implements Action {
@@ -8,12 +8,12 @@ export class ActionGetUser implements Action {
 
 export class ActionLogin implements Action {
   readonly type: ActionTypes.SetUser;
-  constructor(public payload: AuthRequest) {}
+  constructor(public payload: UserRequest) {}
 }
 
 export class ActionLogout implements Action {
   readonly type: ActionTypes.SetUser;
-  constructor(public payload: AuthRequest) {}
+  constructor(public payload: UserRequest) {}
 }
 
 export type Actions = ActionGetUser | ActionLogin | ActionLogout;

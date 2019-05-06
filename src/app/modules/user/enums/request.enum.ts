@@ -1,4 +1,4 @@
-export interface AuthRequest {
+export interface UserRequest {
   email: string;
   password: string;
 }

@@ -1,10 +1,10 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs';
 
 import { Effects } from '../effects';
 
-describe('AppEffects', () => {
+describe('user -> stores -> user -> effects', () => {
   let actions$: Observable<any>;
   let effects: Effects;
 
