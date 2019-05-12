@@ -29,13 +29,13 @@ import * as AppServices from './services';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    ...Object.values(AppModules.modules),
-    AppRoutesModule,
     StoreModule.forRoot({ ...AppModules.reducers }, { metaReducers }),
     EffectsModule.forRoot([...AppModules.effects]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ...Object.values(AppModules.modules),
+    AppRoutesModule
   ],
   providers: [...Object.values(AppServices)],
   bootstrap: [AppComponent]

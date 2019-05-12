@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RootRoutes } from './enums/routes.enum';
-import { DefaultLayout } from './layouts/default/default.layout';
-import { AboutRoute } from './routes/about/about.route';
-import { HomeRoute } from './routes/home/home.route';
+import { RootRoutes } from './enums';
+import { DefaultLayout } from './layouts';
+import { AboutRoute, HomeRoute } from './routes';
 
 export const routes: Routes = [
   {

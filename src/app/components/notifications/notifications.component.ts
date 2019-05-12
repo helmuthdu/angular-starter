@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NotificationTypes } from '../../enums/notification.enum';
-import { NotificationMessage } from '../../models/notification.model';
+import { NotificationTypes } from '../../enums';
+import { NotificationMessage } from '../../models';
 import { NotificationService } from '../../services';
 
 @Component({

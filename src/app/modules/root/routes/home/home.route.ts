@@ -1,8 +1,8 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Router } from '@angular/router';
-import { RootRoutes } from '../../enums/routes.enum';
-import { UserRoutes } from '../../../user/enums/routes.enum';
+import { RootRoutes } from '../../enums';
+import { UserRoutes } from '../../../user/enums';
 import { Observable } from 'rxjs';
 import { ActionTypes, Decrement, Increment, Reset } from '../../stores/modules/counter';
 
