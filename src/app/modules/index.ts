@@ -6,18 +6,24 @@ import * as userStores from './user/stores';
 
 export type State = userStores.State & rootStores.State;
 
-export const modules = {
+const modules = [
   RootModule,
   UserModule
-};
+];
 
-export const reducers = Object.values([...userStores.stores, ...rootStores.stores])
+const reducers = Object.values([ ...rootStores.stores, ...userStores.stores])
   .filter((store: any) => store.reducer)
   .reduce((acc: any, store: any) => {
     acc[store.name] = store.reducer;
     return acc;
   }, {});
 
-export const effects = Object.values([...userStores.stores, ...rootStores.stores])
+const effects = Object.values([...rootStores.stores, ...userStores.stores])
   .filter((store: any) => store.Effects)
   .map((store: any) => store.Effects);
+
+export default {
+  modules,
+  reducers,
+  effects
+}

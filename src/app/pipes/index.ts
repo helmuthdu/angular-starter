@@ -1,1 +1,3 @@
-export * from './truncate/truncate.pipe';
+import { TruncatePipe } from './truncate/truncate.pipe';
+
+export default [TruncatePipe];

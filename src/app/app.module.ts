@@ -12,32 +12,27 @@ import { environment } from '../environments/environment';
 import { AppRoutesModule } from './app-routes.module';
 import { AppComponent } from './app.component';
 import { metaReducers } from './app.stores';
-import * as AppComponents from './components';
-import * as AppModules from './modules';
-import * as AppPipes from './pipes';
-import * as AppRoutes from './routes';
-import * as AppServices from './services';
+import AppComponents from './components';
+import AppModules from './modules';
+import AppPipes from './pipes';
+import AppRoutes from './routes';
+import AppServices from './services';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ...Object.values(AppComponents),
-    ...Object.values(AppPipes),
-    ...Object.values(AppRoutes)
-  ],
+  declarations: [AppComponent, ...AppComponents, ...AppPipes, ...AppRoutes],
   imports: [
     BrowserModule,
+    ...AppModules.modules,
+    AppRoutesModule,
     BrowserAnimationsModule,
     FormsModule,
     StoreModule.forRoot({ ...AppModules.reducers }, { metaReducers }),
     EffectsModule.forRoot([...AppModules.effects]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    ...Object.values(AppModules.modules),
-    AppRoutesModule
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [...Object.values(AppServices)],
+  providers: [...AppServices],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
