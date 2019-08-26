@@ -1,17 +1,14 @@
 import { RootModule } from './root/root.module';
 import * as rootStores from './root/stores';
+import * as userStores from './user/stores';
 
 import { UserModule } from './user/user.module';
-import * as userStores from './user/stores';
 
 export type State = userStores.State & rootStores.State;
 
-const modules = [
-  RootModule,
-  UserModule
-];
+const modules = [RootModule, UserModule];
 
-const reducers = Object.values([ ...rootStores.stores, ...userStores.stores])
+const reducers = Object.values([...rootStores.stores, ...userStores.stores])
   .filter((store: any) => store.reducer)
   .reduce((acc: any, store: any) => {
     acc[store.name] = store.reducer;
@@ -26,4 +23,4 @@ export default {
   modules,
   reducers,
   effects
-}
+};

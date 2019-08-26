@@ -6,9 +6,6 @@ import { UserRoutesModule } from './user-routes.module';
 
 @NgModule({
   declarations: [DefaultLayout, SignInRoute],
-  imports: [
-    CommonModule,
-    UserRoutesModule
-  ]
+  imports: [CommonModule, UserRoutesModule]
 })
 export class UserModule {}

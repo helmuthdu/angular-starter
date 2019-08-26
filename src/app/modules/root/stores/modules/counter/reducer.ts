@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
-import { ActionTypes } from './types';
 import { initialState } from './state';
+import { ActionTypes } from './types';
 
 export const reducer = (state = initialState, action: Action) => {
   switch (action.type) {

@@ -1,3 +1,3 @@
 export enum UserRoutes {
-  SignIn = 'sign-in',
+  SignIn = 'sign-in'
 }

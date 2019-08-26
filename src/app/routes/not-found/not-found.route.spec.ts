@@ -6,7 +6,7 @@ describe('NotFoundComponent', () => {
   let component: NotFoundRoute;
   let fixture: ComponentFixture<NotFoundRoute>;
 
-  beforeEach(async(() => {
+  beforeEach((() => {
     TestBed.configureTestingModule({
       declarations: [NotFoundRoute]
     }).compileComponents();

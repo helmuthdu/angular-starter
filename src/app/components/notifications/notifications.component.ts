@@ -15,7 +15,6 @@ export class NotificationsComponent implements OnInit {
 
   ngOnInit(): void {
     this.notificationService.messages.subscribe((notification: NotificationMessage) => {
-
       if (!notification) {
         // clear alerts when an empty alert is received
         this.notifications = [];

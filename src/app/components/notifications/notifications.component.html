@@ -1,4 +1,4 @@
 <div *ngFor="let notification of notifications" class="{{ classNames(notification) }}">
-  {{notification.message}}
+  {{ notification.message }}
   <a class="close" (click)="remove(notification)">&times;</a>
 </div>
