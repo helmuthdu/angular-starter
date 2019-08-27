@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { StoreModule } from '@ngrx/store';
+import { metaReducers } from '../../../../app.stores';
+import AppModules from '../../../index';
 
 import { HomeRoute } from './home.route';
 
@@ -10,7 +13,7 @@ describe('HomeRouteComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [HomeRoute],
-      imports: [RouterTestingModule]
+      imports: [RouterTestingModule, StoreModule.forRoot({ ...AppModules.reducers }, { metaReducers })]
     }).compileComponents();
   });
 
