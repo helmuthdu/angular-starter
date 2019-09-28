@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RootRoutes } from './modules/root/enums';
+import { RootRoutes } from './modules/routes';
 import { NotFoundRoute } from './routes';
 
 const routes: Routes = [

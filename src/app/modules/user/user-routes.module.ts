@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserRoutes } from './enums';
+import { UserRoutes } from '../routes';
 import { DefaultLayout } from './layouts';
 import { SignInRoute } from './routes';
 
