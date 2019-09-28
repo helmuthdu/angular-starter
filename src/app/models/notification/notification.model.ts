@@ -1,4 +1,4 @@
-import { NotificationTypes } from '../enums/notification.enum';
+import { NotificationTypes } from './notification.enum';
 
 export interface NotificationMessage {
   type: NotificationTypes;

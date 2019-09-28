@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { UserRequest } from '../../../enums';
+import { UserRequest } from '../../../models';
 import { ActionTypes } from './types';
 
 export class ActionGetUser implements Action {

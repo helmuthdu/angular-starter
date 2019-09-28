@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
-import { NotificationTypes } from '../../enums';
 import { NotificationMessage } from '../../models';
+import { NotificationTypes } from '../../models/notification';
 
 @Injectable({
   providedIn: 'root'
