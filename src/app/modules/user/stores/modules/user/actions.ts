@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { UserRequest } from '../../../models';
+import { UserPayload } from '../../../models';
 import { ActionTypes } from './types';
 
 export class ActionGetUser implements Action {
@@ -8,12 +8,12 @@ export class ActionGetUser implements Action {
 
 export class ActionLogin implements Action {
   readonly type: ActionTypes.SetUser;
-  constructor(public payload: UserRequest) {}
+  constructor(public payload: UserPayload) {}
 }
 
 export class ActionLogout implements Action {
   readonly type: ActionTypes.SetUser;
-  constructor(public payload: UserRequest) {}
+  constructor(public payload: UserPayload) {}
 }
 
 export type Actions = ActionGetUser | ActionLogin | ActionLogout;
