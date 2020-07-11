@@ -6,7 +6,7 @@ describe('MatchMediaService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: MatchMediaService = TestBed.get(MatchMediaService);
-    expect(service).toBeTruthy();
+    const service = TestBed.createComponent(MatchMediaService);
+    expect(service.componentInstance).toBeTruthy();
   });
 });

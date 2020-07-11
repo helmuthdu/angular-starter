@@ -19,23 +19,23 @@ export class HomeRoute implements AfterViewInit {
     this.count$ = store.pipe(select('counter'));
   }
 
-  increment() {
+  increment(): void {
     this.store.dispatch(new Increment());
   }
 
-  decrement() {
+  decrement(): void {
     this.store.dispatch(new Decrement());
   }
 
-  reset() {
+  reset(): void {
     this.store.dispatch(new Reset());
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.store.dispatch({ type: ActionTypes.AutoIncrement });
   }
 
-  linkTo(path: string[]) {
+  linkTo(path: string[]): void {
     this.router.navigate(path);
   }
 }

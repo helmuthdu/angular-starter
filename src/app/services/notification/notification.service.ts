@@ -26,32 +26,32 @@ export class NotificationService {
     });
   }
 
-  info(title: string, message: string, keepAfterNavigationChange = false) {
+  info(title: string, message: string, keepAfterNavigationChange = false): void {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
     this.subject$.next({ type: NotificationTypes.Info, title, message });
   }
 
-  success(title: string, message: string, keepAfterNavigationChange = false) {
+  success(title: string, message: string, keepAfterNavigationChange = false): void {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
     this.subject$.next({ type: NotificationTypes.Success, title, message });
   }
 
-  waiting(title: string, message: string, keepAfterNavigationChange = false) {
+  waiting(title: string, message: string, keepAfterNavigationChange = false): void {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
     this.subject$.next({ type: NotificationTypes.Waiting, title, message });
   }
 
-  error(title: string, message: string, keepAfterNavigationChange = false) {
+  error(title: string, message: string, keepAfterNavigationChange = false): void {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
     this.subject$.next({ type: NotificationTypes.Error, title, message });
   }
 
-  warning(title: string, message: string, keepAfterNavigationChange = false) {
+  warning(title: string, message: string, keepAfterNavigationChange = false): void {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
     this.subject$.next({ type: NotificationTypes.Warning, title, message });
   }
 
-  clear() {
+  clear(): void {
     this.subject$.next();
   }
 

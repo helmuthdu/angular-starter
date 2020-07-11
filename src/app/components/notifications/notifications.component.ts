@@ -25,11 +25,11 @@ export class NotificationsComponent implements OnInit {
     });
   }
 
-  remove(notification: NotificationMessage) {
+  remove(notification: NotificationMessage): void {
     this.notifications = this.notifications.filter(n => n !== notification);
   }
 
-  classNames(notification: NotificationMessage) {
+  classNames(notification: NotificationMessage): string {
     if (!notification) {
       return;
     }

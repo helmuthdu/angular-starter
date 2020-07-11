@@ -7,7 +7,7 @@ describe('NotificationService', () => {
   beforeEach(() => TestBed.configureTestingModule({ imports: [RouterTestingModule] }));
 
   it('should be created', () => {
-    const service: NotificationService = TestBed.get(NotificationService);
-    expect(service).toBeTruthy();
+    const service = TestBed.createComponent(NotificationService);
+    expect(service.componentInstance).toBeTruthy();
   });
 });
