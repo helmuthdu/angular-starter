@@ -4,10 +4,12 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NotificationService } from './notification.service';
 
 describe('NotificationService', () => {
+  let service: NotificationService;
+
   beforeEach(() => TestBed.configureTestingModule({ imports: [RouterTestingModule] }));
 
   it('should be created', () => {
-    const service = TestBed.createComponent(NotificationService);
-    expect(service.componentInstance).toBeTruthy();
+    service = TestBed.inject(NotificationService);
+    expect(service).toBeTruthy();
   });
 });

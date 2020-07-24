@@ -7,17 +7,17 @@ import { Effects } from '../effects';
 describe('user -> stores -> user -> effects', () => {
   // tslint:disable-next-line:prefer-const
   let actions$: Observable<any>;
-  let effects: ComponentFixture<Effects>;
+  let effects: Effects;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [Effects, provideMockActions(() => actions$)]
     });
 
-    effects = TestBed.createComponent(Effects);
+    effects = TestBed.inject(Effects);
   });
 
   it('should be created', () => {
-    expect(effects.componentInstance).toBeTruthy();
+    expect(effects).toBeTruthy();
   });
 });
