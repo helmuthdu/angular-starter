@@ -2,7 +2,8 @@ import { AfterViewInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { RootRoutes, UserRoutes } from '../../../routes';
+import { ROOT_PATHS, USER_PATHS } from '../../../paths';
+import { State } from '../../stores';
 import { ActionTypes, Decrement, Increment, Reset } from '../../stores/modules/counter';
 
 @Component({
@@ -12,10 +13,10 @@ import { ActionTypes, Decrement, Increment, Reset } from '../../stores/modules/c
 })
 export class HomeRoute implements AfterViewInit {
   title = 'angular-starter';
-  Routes = { ...RootRoutes, ...UserRoutes };
+  Routes = { ...ROOT_PATHS, ...USER_PATHS };
   count$: Observable<number>;
 
-  constructor(private router: Router, private store: Store<{ counter: number }>) {
+  constructor(private router: Router, private store: Store<State>) {
     this.count$ = store.pipe(select('counter'));
   }
 

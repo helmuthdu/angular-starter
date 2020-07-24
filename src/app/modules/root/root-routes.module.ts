@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RootRoutes } from '../routes';
+import { ROOT_PATHS } from '../paths';
 import { DefaultLayout } from './layouts';
 import { AboutRoute, HomeRoute } from './routes';
 
 export const routes: Routes = [
   {
-    path: RootRoutes.Home,
+    path: ROOT_PATHS.Home,
     component: DefaultLayout,
     children: [{ path: '', component: HomeRoute }]
   },
   {
-    path: RootRoutes.About,
+    path: ROOT_PATHS.About,
     component: DefaultLayout,
     children: [{ path: '', component: AboutRoute }]
   }
