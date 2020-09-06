@@ -3,6 +3,9 @@
     "tslint:recommended",
     "tslint-config-prettier"
   ],
+  "rulesDirectory": [
+    "codelyzer"
+  ],
   "rules": {
     "align": {
       "options": [
@@ -16,7 +19,6 @@
     "deprecation": {
       "severity": "warning"
     },
-    "contextual-lifecycle": true,
     "eofline": true,
     "import-blacklist": [
       true,
@@ -122,6 +124,7 @@
         "check-typecast"
       ]
     },
+    "contextual-lifecycle": true,
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
     "no-input-rename": true,
@@ -134,8 +137,5 @@
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true
-  },
-  "rulesDirectory": [
-    "codelyzer"
-  ]
+  }
 }

@@ -31,7 +31,7 @@ export class NotificationsComponent implements OnInit {
 
   classNames(notification: NotificationMessage): string {
     if (!notification) {
-      return;
+      return '';
     }
 
     // return css class based on notification type
