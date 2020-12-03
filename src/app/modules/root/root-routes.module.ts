@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ROOT_PATHS } from '../paths';
-import { DefaultLayout } from './layouts';
+import { RootPaths } from '../paths';
+import { AppRootDefaultLayout } from './layouts';
 import { AboutRoute, HomeRoute } from './routes';
 
 export const routes: Routes = [
   {
-    path: ROOT_PATHS.Home,
-    component: DefaultLayout,
+    path: RootPaths.home,
+    component: AppRootDefaultLayout,
     children: [{ path: '', component: HomeRoute }]
   },
   {
-    path: ROOT_PATHS.About,
-    component: DefaultLayout,
+    path: RootPaths.about,
+    component: AppRootDefaultLayout,
     children: [{ path: '', component: AboutRoute }]
   }
 ];

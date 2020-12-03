@@ -1,16 +1,16 @@
 import { Action } from '@ngrx/store';
 import { initialState } from './state';
-import { ActionTypes } from './types';
+import { RootActionTypes } from './types';
 
 export const reducer = (state = initialState, action: Action) => {
   switch (action.type) {
-    case ActionTypes.Increment:
+    case RootActionTypes.increment:
       return state + 1;
 
-    case ActionTypes.Decrement:
+    case RootActionTypes.decrement:
       return state - 1;
 
-    case ActionTypes.Reset:
+    case RootActionTypes.reset:
       return 0;
 
     default:

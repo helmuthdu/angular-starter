@@ -1,18 +1,18 @@
 import { Action } from '@ngrx/store';
-import { ActionTypes } from './types';
+import { RootActionTypes } from './types';
 
 export class AutoIncrement implements Action {
-  readonly type = ActionTypes.AutoIncrement;
+  readonly type = RootActionTypes.autoIncrement;
 }
 
 export class Increment implements Action {
-  readonly type = ActionTypes.Increment;
+  readonly type = RootActionTypes.increment;
 }
 
 export class Decrement implements Action {
-  readonly type = ActionTypes.Decrement;
+  readonly type = RootActionTypes.decrement;
 }
 
 export class Reset implements Action {
-  readonly type = ActionTypes.Reset;
+  readonly type = RootActionTypes.reset;
 }

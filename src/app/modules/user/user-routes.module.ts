@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { USER_PATHS } from '../paths';
-import { DefaultLayout } from './layouts';
+import { UserPaths } from '../paths';
+import { UserDefaultLayout } from './layouts';
 import { SignInRoute } from './routes';
 
 const routes: Routes = [
   {
-    path: USER_PATHS.SignIn,
-    component: DefaultLayout,
+    path: UserPaths.signIn,
+    component: UserDefaultLayout,
     children: [{ path: '', component: SignInRoute }]
   }
 ];

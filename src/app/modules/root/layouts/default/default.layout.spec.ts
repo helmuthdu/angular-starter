@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { DefaultLayout } from './default.layout';
+import { AppRootDefaultLayout } from './default.layout';
 
 describe('DefaultLayoutComponent', () => {
-  let component: DefaultLayout;
-  let fixture: ComponentFixture<DefaultLayout>;
+  let component: AppRootDefaultLayout;
+  let fixture: ComponentFixture<AppRootDefaultLayout>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DefaultLayout],
+      declarations: [AppRootDefaultLayout],
       imports: [RouterTestingModule]
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DefaultLayout);
+    fixture = TestBed.createComponent(AppRootDefaultLayout);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

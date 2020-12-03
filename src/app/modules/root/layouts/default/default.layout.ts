@@ -5,4 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './default.layout.html',
   styleUrls: ['./default.layout.scss']
 })
-export class DefaultLayout {}
+export class AppRootDefaultLayout {}

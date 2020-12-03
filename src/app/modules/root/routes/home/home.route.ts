@@ -2,9 +2,9 @@ import { AfterViewInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { ROOT_PATHS, USER_PATHS } from '../../../paths';
+import { RootPaths, UserPaths } from '../../../paths';
 import { State } from '../../stores';
-import { ActionTypes, Decrement, Increment, Reset } from '../../stores/modules/counter';
+import { RootActionTypes, Decrement, Increment, Reset } from '../../stores/modules/counter';
 
 @Component({
   selector: 'home-route',
@@ -13,7 +13,7 @@ import { ActionTypes, Decrement, Increment, Reset } from '../../stores/modules/c
 })
 export class HomeRoute implements AfterViewInit {
   title = 'angular-starter';
-  Routes = { ...ROOT_PATHS, ...USER_PATHS };
+  routes = { ...RootPaths, ...UserPaths };
   count$: Observable<number>;
 
   constructor(private router: Router, private store: Store<State>) {
@@ -33,7 +33,7 @@ export class HomeRoute implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.store.dispatch({ type: ActionTypes.AutoIncrement });
+    this.store.dispatch({ type: RootActionTypes.autoIncrement });
   }
 
   linkTo(path: string[]): void {

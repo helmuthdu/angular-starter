@@ -1,3 +1,3 @@
-export enum USER_PATHS {
-  SignIn = 'sign-in'
+export enum UserPaths {
+  signIn = 'sign-in'
 }

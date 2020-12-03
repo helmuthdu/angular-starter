@@ -8,6 +8,7 @@ interface InputObservableOptions {
 }
 /**
  * Creates an observable variable to be used with a search input
+ *
  * @return Observable<string>
  */
 export const debounceValueObserver = (subject: Subject<string>, options: InputObservableOptions): Observable<string> => {

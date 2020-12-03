@@ -1,3 +1,3 @@
-export enum ActionTypes {
-  SetUser = '@user/set-user'
+export enum UserActionTypes {
+  setUser = '@user/set-user'
 }
