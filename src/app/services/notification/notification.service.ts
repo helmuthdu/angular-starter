@@ -28,27 +28,27 @@ export class NotificationService {
 
   info(title: string, message: string, keepAfterNavigationChange = false): void {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
-    this.subject$.next({ type: NotificationTypes.Info, title, message });
+    this.subject$.next({ type: NotificationTypes.info, title, message });
   }
 
   success(title: string, message: string, keepAfterNavigationChange = false): void {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
-    this.subject$.next({ type: NotificationTypes.Success, title, message });
+    this.subject$.next({ type: NotificationTypes.success, title, message });
   }
 
   waiting(title: string, message: string, keepAfterNavigationChange = false): void {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
-    this.subject$.next({ type: NotificationTypes.Waiting, title, message });
+    this.subject$.next({ type: NotificationTypes.waiting, title, message });
   }
 
   error(title: string, message: string, keepAfterNavigationChange = false): void {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
-    this.subject$.next({ type: NotificationTypes.Error, title, message });
+    this.subject$.next({ type: NotificationTypes.error, title, message });
   }
 
   warning(title: string, message: string, keepAfterNavigationChange = false): void {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
-    this.subject$.next({ type: NotificationTypes.Warning, title, message });
+    this.subject$.next({ type: NotificationTypes.warning, title, message });
   }
 
   clear(): void {

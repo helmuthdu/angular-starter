@@ -1,18 +1,18 @@
 import { Action } from '@ngrx/store';
 import { UserPayload } from '../../../models';
-import { ActionTypes } from './types';
+import { UserActionTypes } from './types';
 
 export class ActionGetUser implements Action {
-  readonly type!: ActionTypes.SetUser;
+  readonly type!: UserActionTypes.setUser;
 }
 
 export class ActionLogin implements Action {
-  readonly type!: ActionTypes.SetUser;
+  readonly type!: UserActionTypes.setUser;
   constructor(public payload: UserPayload) {}
 }
 
 export class ActionLogout implements Action {
-  readonly type!: ActionTypes.SetUser;
+  readonly type!: UserActionTypes.setUser;
   constructor(public payload: UserPayload) {}
 }
 

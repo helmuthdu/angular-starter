@@ -36,14 +36,14 @@ export class NotificationsComponent implements OnInit {
 
     // return css class based on notification type
     switch (notification.type) {
-      case NotificationTypes.Success:
+      case NotificationTypes.success:
         return 'alert alert-success';
-      case NotificationTypes.Error:
+      case NotificationTypes.error:
         return 'alert alert-danger';
-      case NotificationTypes.Info:
-      case NotificationTypes.Waiting:
+      case NotificationTypes.info:
+      case NotificationTypes.waiting:
         return 'alert alert-info';
-      case NotificationTypes.Warning:
+      case NotificationTypes.warning:
         return 'alert alert-warning';
     }
   }
