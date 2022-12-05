@@ -4,10 +4,10 @@ import { AppComponent } from './app.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 
 describe('AppComponent', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [AppComponent, NotificationsComponent],
-      imports: [RouterTestingModule]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
+      declarations: [AppComponent, NotificationsComponent]
     }).compileComponents();
   });
 
